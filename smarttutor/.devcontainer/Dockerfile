@@ -1,5 +1,4 @@
 FROM ibm-semeru-runtimes:open-17.0.10_7-jdk-jammy
-
 RUN apt-get update
 RUN apt-get install -y python3 python3-pip
 RUN pip install numpy
