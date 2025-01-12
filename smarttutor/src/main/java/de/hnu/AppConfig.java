@@ -39,7 +39,7 @@ public class AppConfig {
   @Bean
   @ConfigurationProperties("app.jpa")
   public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-    EclipseLinkJpaVendorAdapter vendorAdapter = new EclipseLinkJpaVendorAdapter();
+    HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
     vendorAdapter.setGenerateDdl(true);
     vendorAdapter.setShowSql(true);
   
@@ -52,9 +52,7 @@ public class AppConfig {
 
   @Bean
   public PlatformTransactionManager transactionManager(LocalContainerEntityManagerFactoryBean entityManagerFactory) {
-    JpaTransactionManager txManager = new JpaTransactionManager();
-    txManager.setEntityManagerFactory(entityManagerFactory.getNativeEntityManagerFactory());
-    return txManager;
+    return new JpaTransactionManager(entityManagerFactory.getNativeEntityManagerFactory());
   } 
 
 }

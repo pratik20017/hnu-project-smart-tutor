@@ -8,14 +8,14 @@ services:
     ports:
       - "1527:1527"
 
-  smarttutor:
-    build: 
-      context: .
-      dockerfile: Dockerfile   
-    volumes:
-      # Mount the project folder
-      - ../:/workspace:cached
-    ports:
-      - "8080:8080"
-    depends_on:
-      - derby
+#  smarttutor:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    volumes:
+#      # Mount the project folder
+#      - ../:/workspace:cached
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - derby

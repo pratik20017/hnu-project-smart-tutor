@@ -1,0 +1,16 @@
+services:
+  chromadb:
+    image: ghcr.io/chroma-core/chroma:0.6.1.dev12
+    container_name: chromadb
+    ports:
+      - "8000:8000"
+
+  ollama:
+    build:
+      context: .
+      dockerfile: Dockerfile.ollama
+    container_name: ollama
+    environment:
+      - OLLAMA_MODE=cpu
+    ports:
+      - "11434:11434"
