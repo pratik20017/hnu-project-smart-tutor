@@ -1,6 +1,8 @@
-package de.hnu.data;
+package de.hnu.service;
 
-import de.hnu.account.dtos.AccountRequestDto;
+import de.hnu.data.Account;
+import de.hnu.dto.AccountRequestDto;
+import de.hnu.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

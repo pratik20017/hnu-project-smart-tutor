@@ -15,7 +15,6 @@ public class Lecturer {
     private String lastName;
 
     @ManyToMany(mappedBy = "lecturers", fetch = FetchType.LAZY)
-    @Column(nullable = true)
     private List<Course> courses;
 
     @OneToOne(fetch = FetchType.LAZY)
